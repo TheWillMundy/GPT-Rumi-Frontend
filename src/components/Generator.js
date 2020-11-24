@@ -51,33 +51,22 @@ const Generator = () => {
 		if (data) setPoem(data.poem);
 
 		// Stop Spinner
-        setLoading(false);
-        
-        // Create poem modal
-        onOpen();
+		setLoading(false);
+
+		// Create poem modal
+		onOpen();
 
 		// Finally reset values
 		setGeneratorValues(defaultState);
 	};
 	return (
 		<Container padding="5" maxW="3xl" centerContent>
-			<Box
-				padding="4"
-				borderRadius="md"
-				borderWidth="1px"
-				borderColor="pink.100"
-				maxW="3xl"
-			>
-				<Text>
-					Use the following to create your own poem in the style of
-					Rumi!
-				</Text>
-				<Box borderRadius="md" padding="2" bg="red.200" w="2xl">
-					NOTE: This typically takes ~20 seconds
-				</Box>
+			<Box borderRadius="md" padding="5" bg="green.50" textAlign="center">
+				Use the following to create your own poem in the style of Rumi! <br />
+				NOTE: This typically takes ~20 seconds
 			</Box>
 			<Container paddingTop="5">
-				<Box padding="5" bg="green.50" maxW="3xl">
+				<Box padding="5" borderWidth="1px" borderColor="green.300" maxW="3xl">
 					<FormControl id="length" padding="5" isDisabled={isLoading}>
 						<FormLabel>Maximum Length of Poem</FormLabel>
 						<Slider
@@ -127,7 +116,13 @@ const Generator = () => {
 						)}
 					</Flex>
 				</Box>
-                {getPoem ? <PoemModal poem={getPoem} isOpen={isOpen} onClose={onClose} /> : null}
+				{getPoem ? (
+					<PoemModal
+						poem={getPoem}
+						isOpen={isOpen}
+						onClose={onClose}
+					/>
+				) : null}
 				{/* {getPoem ? (
 					<Box padding="5" bg="blue.50" maxW="3xl">
 						<Text>{getPoem}</Text>

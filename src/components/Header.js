@@ -10,6 +10,7 @@ const Header = () => {
 		{ name: "View Samples", path: "/samples" },
 		{ name: "Generate Your Own", path: "/generate" },
 		{ name: "View Insights", path: "/insights" },
+		{ name: "Inspiration Poems", path: "/inspirations" }
 	];
 
 	return (
