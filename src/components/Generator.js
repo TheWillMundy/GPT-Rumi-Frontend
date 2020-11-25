@@ -25,6 +25,8 @@ const defaultState = {
 	prompt: "",
 };
 
+const backend = "68.183.137.219";
+
 const Generator = () => {
 	const [getGeneratorValues, setGeneratorValues] = useState(defaultState);
 	const [getPoem, setPoem] = useState(null);
@@ -42,7 +44,7 @@ const Generator = () => {
 		setLoading(true);
 
 		// Make Request
-		const response = await axios.get("http://localhost:8000/generate", {
+		const response = await axios.get(`http://${backend}/generate`, {
 			params: getGeneratorValues,
 		});
 
@@ -63,7 +65,7 @@ const Generator = () => {
 		<Container padding="5" maxW="3xl" centerContent>
 			<Box borderRadius="md" padding="5" bg="green.50" textAlign="center">
 				Use the following to create your own poem in the style of Rumi! <br />
-				NOTE: This typically takes ~20 seconds
+				NOTE: This typically takes ~15 seconds
 			</Box>
 			<Container paddingTop="5">
 				<Box padding="5" borderWidth="1px" borderColor="green.300" maxW="3xl">
