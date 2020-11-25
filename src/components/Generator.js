@@ -7,13 +7,11 @@ import {
 	FormHelperText,
 	FormLabel,
 	Input,
-	Link,
 	Slider,
 	SliderFilledTrack,
 	SliderThumb,
 	SliderTrack,
 	Spinner,
-	Text,
 	useDisclosure,
 } from "@chakra-ui/react";
 import axios from "axios";

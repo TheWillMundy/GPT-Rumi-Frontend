@@ -1,4 +1,4 @@
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 import Generate from "./pages/Generate";
 import Home from "./pages/Home";
 import Insights from "./pages/Insights";
